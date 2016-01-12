@@ -4,15 +4,21 @@
           "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
 
 <!--
-    Checkstyle configuration that checks the Google coding conventions from Google Java Style
-    that can be found at https://google.github.io/styleguide/javaguide.html.
+
+    Checkstyle configuration that checks the Google coding conventions from:
+
+    -  Google Java Style
+       https://google-styleguide.googlecode.com/svn-history/r130/trunk/javaguide.html
 
     Checkstyle is very configurable. Be sure to read the documentation at
     http://checkstyle.sf.net (or in your downloaded distribution).
 
+    Most Checks are configurable, be sure to consult the documentation.
+
     To completely disable a check, just comment it out or delete it from the file.
 
     Authors: Max Vetrenko, Ruslan Diachenko, Roman Ivanov.
+
  -->
 
 <module name = "Checker">
@@ -63,7 +69,7 @@
             <property name="allowEmptyConstructors" value="true"/>
             <property name="allowEmptyMethods" value="true"/>
             <property name="allowEmptyTypes" value="true"/>
-            <property name="allowEmptyLoops" value="false"/>
+            <property name="allowEmptyLoops" value="true"/>
             <message key="ws.notFollowed"
              value="WhitespaceAround: ''{0}'' is not followed by whitespace. Empty blocks may only be represented as '{}' when not part of a multi-block statement (4.1.3)"/>
              <message key="ws.notPreceded"
@@ -106,15 +112,10 @@
             <message key="name.invalidPattern"
              value="Parameter name ''{0}'' must match pattern ''{1}''."/>
         </module>
-        <module name="CatchParameterName">
-            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
-            <message key="name.invalidPattern"
-             value="Catch parameter name ''{0}'' must match pattern ''{1}''."/>
-        </module>
         <module name="LocalVariableName">
             <property name="tokens" value="VARIABLE_DEF"/>
             <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
-            <property name="allowOneCharVarInForLoop" value="false"/>
+            <property name="allowOneCharVarInForLoop" value="true"/>
             <message key="name.invalidPattern"
              value="Local variable name ''{0}'' must match pattern ''{1}''."/>
         </module>
@@ -172,7 +173,7 @@
         </module>
         <module name="NonEmptyAtclauseDescription"/>
         <module name="JavadocTagContinuationIndentation"/>
-        <module name="SummaryJavadoc">
+        <module name="SummaryJavadocCheck">
             <property name="forbiddenSummaryFragments" value="^@return the *|^This method returns |^A [{]@code [a-zA-Z0-9]+[}]( is a )"/>
         </module>
         <module name="JavadocParagraph"/>
