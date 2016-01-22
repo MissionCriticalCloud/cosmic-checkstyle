@@ -6,4 +6,44 @@
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>checkstyle</name>
+
+  <distributionManagement>
+    <repository>
+      <id>internal.repo</id>
+      <name>Temporary Staging Repository</name>
+      <url>file://${project.build.directory}/maven-repo</url>
+    </repository>
+  </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.12</version>
+        <configuration>
+          <message>Maven artifacts for Checkstyle project ${project.version}</message>
+          <outputDirectory>${project.build.directory}/maven-repo</outputDirectory>
+          <branch>refs/heads/checkstyle</branch>
+          <includes>
+            <include>**/*</include>
+          </includes>
+          <merge>true</merge>
+          <repositoryName>maven-repo</repositoryName>
+          <repositoryOwner>MissionCriticalCloud</repositoryOwner>
+          <userName>mccd-jenkins</userName>
+          <oauth2Token>${MCCD_JENKINS_TOKEN}</oauth2Token>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>deploy</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
