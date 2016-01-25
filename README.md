@@ -62,6 +62,10 @@ Now that the dependency was added, we have to add the Maven Checkstyle Plugin. P
       </plugin>
 ```
 
+# Proof of Concept
+
+There is a PoC available, which mkes use of the Checkstyle project. It can be found here: [Checkstyle Test](https://github.com/MissionCriticalCloud/academy/tree/master/checkstyle-test)
+
 # Importing Eclipse specific settings
 
 The Checkstyle project also contains Eclipse specific configuration files for Fromatter, Clean-up and Organise Import actions. The xml files can be found under the following directory:
