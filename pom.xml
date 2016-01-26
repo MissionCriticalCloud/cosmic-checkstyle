@@ -38,7 +38,7 @@
           <repositoryName>maven-repo</repositoryName>
           <repositoryOwner>MissionCriticalCloud</repositoryOwner>
           <userName>mccd-jenkins</userName>
-          <oauth2Token>${MCCD_JENKINS_TOKEN}</oauth2Token>
+          <oauth2Token>${MCCD_JENKINS_OAUTH2_TOKEN}</oauth2Token>
         </configuration>
         <executions>
           <execution>
