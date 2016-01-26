@@ -9,7 +9,7 @@ The project artifacts can be easily installed. In order to do so, please add the
 ```
   <pluginRepositories>
     <pluginRepository>
-      <id>check-style-maven-repo</id>
+      <id>checkstyle-maven-repo</id>
       <name>MCC Maven Repo</name>
       <url>https://github.com/MissionCriticalCloud/maven-repo/raw/checkstyle/</url>
       <releases>
@@ -38,9 +38,9 @@ Now that the dependency was added, we have to add the Maven Checkstyle Plugin. P
             <version>6.11.2</version>
           </dependency>
           <dependency>
-            <groupId>mcc.checkstyle</groupId>
-            <artifactId>checkstyle</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>cloud.cosmic</groupId>
+            <artifactId>cosmic-checkstyle</artifactId>
+            <version>5.0.0-SNAPSHOT</version>
           </dependency>
         </dependencies>
         <executions>
