@@ -15,6 +15,11 @@
     </repository>
   </distributionManagement>
 
+  <scm>
+    <connection>scm:git:git@github.com:MissionCriticalCloud/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:MissionCriticalCloud/${project.artifactId}.git</developerConnection>
+  </scm>
+
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
     <testSourceDirectory>src/test/java</testSourceDirectory>
@@ -29,6 +34,11 @@
       </testResource>
     </testResources>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+      </plugin>
       <plugin>
         <groupId>com.github.github</groupId>
         <artifactId>site-maven-plugin</artifactId>
