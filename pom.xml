@@ -3,7 +3,7 @@
   <groupId>cloud.cosmic</groupId>
   <artifactId>cosmic-checkstyle</artifactId>
   <packaging>jar</packaging>
-  <version>5.0.0</version>
+  <version>5.0.1-SNAPSHOT</version>
   <name>Cosmic Checkstyle</name>
 
   <distributionManagement>
@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git@github.com:MissionCriticalCloud/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:MissionCriticalCloud/${project.artifactId}.git</developerConnection>
-    <tag>cosmic-checkstyle-5.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
