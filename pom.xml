@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>cloud.cosmic</groupId>
   <artifactId>cosmic-checkstyle</artifactId>
@@ -8,10 +9,15 @@
 
   <distributionManagement>
     <repository>
-      <id>internal.repo</id>
-      <name>Temporary Staging Repository</name>
-      <url>file://${project.build.directory}/maven-repo</url>
+      <id>beta-nexus</id>
+      <name>MCC Nexus</name>
+      <url>https://beta-nexus.mcc.schubergphilis.com/content/repositories/releases/</url>
     </repository>
+    <snapshotRepository>
+      <id>beta-nexus</id>
+      <name>MCC Nexus</name>
+      <url>https://beta-nexus.mcc.schubergphilis.com/content/repositories/snapshots/</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <scm>
@@ -38,32 +44,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
         <version>2.5.3</version>
-      </plugin>
-      <plugin>
-        <groupId>com.github.github</groupId>
-        <artifactId>site-maven-plugin</artifactId>
-        <version>0.12</version>
-        <configuration>
-          <message>Maven artifacts for Checkstyle project ${project.version}</message>
-          <outputDirectory>${project.build.directory}/maven-repo</outputDirectory>
-          <branch>refs/heads/checkstyle</branch>
-          <includes>
-            <include>**/*</include>
-          </includes>
-          <merge>true</merge>
-          <repositoryName>maven-repo</repositoryName>
-          <repositoryOwner>MissionCriticalCloud</repositoryOwner>
-          <userName>mccd-jenkins</userName>
-          <oauth2Token>${MCCD_JENKINS_OAUTH2_TOKEN}</oauth2Token>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>site</goal>
-            </goals>
-            <phase>deploy</phase>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
